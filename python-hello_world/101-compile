@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 -m py_compile "$PYFILE" && cat __pycache__/* >> "$PYFILE"c
+python3 -m compileall "$PYFILE" -d "$PYFILE"c
