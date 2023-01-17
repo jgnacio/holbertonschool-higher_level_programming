@@ -8,7 +8,7 @@ if last < 0:
     last *= -1
 else:
     last %= 10
-print(f"Last digit of {number} is {last} and ", end="")
+print(f"Last digit of {number} is {last} ", end="")
 
 if last == 0:
     print("and is 0")
