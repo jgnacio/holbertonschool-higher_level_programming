@@ -6,6 +6,8 @@ def add_tuple(tuple_a=(), tuple_b=()):
         return tuple_b
     if len_b == 0 and len_a > 0:
         return tuple_a
+    if len_a == 0 and len_b == 0:
+        return (0, 0)
     if len_a < 2:
         snumber_a = 0
     else:
