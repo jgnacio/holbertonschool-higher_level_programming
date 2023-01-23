@@ -2,5 +2,5 @@
 def delete_at(my_list=[], idx=0):
     if idx < 0 or idx >= len(my_list):
         return my_list
-    my_list.pop(0)
+    my_list.pop(idx)
     return my_list
