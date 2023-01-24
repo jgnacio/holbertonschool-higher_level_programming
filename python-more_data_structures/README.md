@@ -76,28 +76,33 @@ but... what about the function?
 
  ok ok but... why a map inside a list  in the lambda function?
 	
-	The reason is because it is a nested list so if you try to do something like this:
-	```Python
-	matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-	new_Matrix = list(map(lambda L: L ** 2, matrix))
-	print(new_Matrix)
-	```
-	we will encounter an error of this type:
-	`TypeError: unsupported operand type(s) for ** or pow(): 'list' and 'int'`
-	but what happened?...
-	The interpreter does not understand because it takes an element of the matrix that is a list, and tries to calculate the square of the list, which for the interpreter is not very logical.
+The reason is because it is a nested list so if you try to do something like this:
+``` Python
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+new_Matrix = list(map(lambda L: L ** 2, matrix))
+print(new_Matrix)
+```
+we will encounter an error of this type:
+
+`TypeError: unsupported operand type(s) for ** or pow(): 'list' and 'int'`
+
+but what happened?...
+The interpreter does not understand because it takes an element of the matrix that is a list, and tries to calculate the square of the list, which for the interpreter is not very logical.
 	
-	What we have to do, is to obtain each element of the "sub lists" with map and inside this map then calculate the square.
-	The result is:
-	```python
+What we have to do, is to obtain each element of the "sub lists" with map and inside this map then calculate the square.
+The result is:
+``` python
 	matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 	new_Matrix = list(map(lambda l: map(lambda s: s ** 2, l), matrix))
 	print(new_Matrix)
-	```
-	And that would be all, wouldnt it?
+```
+
+And that would be all, wouldnt it?
 lets see the output:
-	`[<map object at 0x0000020E3AC9A890>, <map object at 0x0000020E3AC9A830>, <map object at 0x0000020E3AC9A7A0>]`
-	**what?** but what are all these objects?
+
+`[<map object at 0x0000020E3AC9A890>, <map object at 0x0000020E3AC9A830>, <map object at 0x0000020E3AC9A7A0>]`
+
+**what?** but what are all these objects?
 	
 The answer is not very clear to me, but roughly speaking, the map function returns what are map objects, which can be constructed as a list or as a set.
 
