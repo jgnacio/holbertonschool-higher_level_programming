@@ -9,7 +9,6 @@ def roman_to_int(roman_string):
     roman_int = 0
     for i in range(0, len(roman_string), 2):
         check = roman_string[i:i + 2]
-        print(check)
         if len(check) == 2:
             if check in roman:
                 roman_int += roman[check]
