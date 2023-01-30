@@ -8,6 +8,7 @@ Created on Tue Mar 10 11:46:00 2021.
 
 """
 
+
 class Square:
     """Define an empty Square class."""
 
