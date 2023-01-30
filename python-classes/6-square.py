@@ -27,8 +27,10 @@ class Square():
                         self._Square__position = position
                     else:
                         raise ValueError(Square.TUPLEERROR)
+                else:
+                    raise TypeError(Square.TUPLEERROR)
             except IndexError:
-                raise IndexError(Square.TUPLEERROR)
+                print(Square.TUPLEERROR)
         else:
             raise TypeError(Square.TUPLEERROR)
 
@@ -64,8 +66,10 @@ class Square():
                         self._Square__position = value
                     else:
                         raise ValueError(Square.TUPLEERROR)
+                else:
+                    raise TypeError(Square.TUPLEERROR)
             except IndexError:
-                raise IndexError(Square.TUPLEERROR)
+                print(Square.TUPLEERROR)
         else:
             raise TypeError(Square.TUPLEERROR)
 
