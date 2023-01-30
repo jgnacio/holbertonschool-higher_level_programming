@@ -38,7 +38,7 @@ class Square():
         """Return a string representation of the Square."""
         out_format = ""
         if self._Square__size == 0:
-            return "\n"
+            return ""
 
         for y in range(self._Square__position[1]):
             out_format += "\n"
