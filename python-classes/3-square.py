@@ -12,8 +12,6 @@ Created on Mon Jan 10 12:53:00 2023.
 class Square():
     """Represent a Square with size."""
 
-    __size = 0
-
     def __init__(self, size=0):
         """
         Initialize an empty Square.
@@ -22,8 +20,7 @@ class Square():
         """
         if isinstance(size, int):
             if size >= 0:
-                Square.__size = size
-                self._Square__size = Square.__size
+                self._Square__size = size
             else:
                 raise ValueError("size must be >= 0")
         else:
@@ -31,4 +28,4 @@ class Square():
 
     def area(self):
         """Return the area of the Square."""
-        return Square.__size ** 2
+        return self._Square__size ** 2
