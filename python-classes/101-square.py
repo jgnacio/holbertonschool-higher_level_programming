@@ -50,7 +50,7 @@ class Square():
                 out_format += "#"
             out_format += "\n"
 
-        return out_format
+        return out_format[:-1]
 
     @property
     def size(self):
