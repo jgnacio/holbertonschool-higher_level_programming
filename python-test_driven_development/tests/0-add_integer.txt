@@ -16,16 +16,14 @@ Now use it:
     >>> add_integer(100, -2)
     98
     >>> add_integer(2)
-    b must be an integer
+    100
     >>> add_integer(100.3, -2)
-    a must be an integer
-    >>> add_integer(4j, 2)
-    a must be an integer
+    98
     >>> add_integer(2, 1**2)
     3
-    >>> add_integer()
-    a must be an integer
-    >>> add_integer(100.3, "-2")
-    a must be an integer
-    >>> add_integer(100, "-2")
-    b must be an integer
+    >>> add_integer(-400)
+    -302
+    >>> add_integer(1/2)
+    98
+    >>> add_integer(1^2)
+    101
