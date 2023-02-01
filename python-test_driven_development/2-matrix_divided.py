@@ -12,8 +12,8 @@ This module have a function:
 def matrix_divided(matrix, div):
     """Divides the matrix."""
     MATRIXERR = "matrix must be a matrix (list of lists) of integers/floats"
-    if (not isinstance(matrix, list)
-       or not all(isinstance(elem, list) for elem in matrix)):
+    if (not isinstance(matrix, list) or not
+       all(isinstance(elem, list) for elem in matrix)):
         raise TypeError(MATRIXERR)
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
