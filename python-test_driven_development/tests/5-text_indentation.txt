@@ -20,46 +20,53 @@ Now use it:
     ... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
     ... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
     ... beatiorem! Iam ruinas videres""")
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     <BLANKLINE>
-    Quonam modo
+    Quonam modo?
     <BLANKLINE>
-    Utrum igitur tibi litteram videor an totas paginas commovere
+    Utrum igitur tibi litteram videor an totas paginas commovere?
     <BLANKLINE>
-    Non autem hoc
+    Non autem hoc: igitur ne illud quidem.
     <BLANKLINE>
-    igitur ne illud quidem
+    Fortasse id optimum, sed ubi illud: Plus semper voluptatis?
     <BLANKLINE>
-    Fortasse id optimum, sed ubi illud
+    Teneo, inquit, finem illi videri nihil dolere.
     <BLANKLINE>
-    Plus semper voluptatis
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
     <BLANKLINE>
-    Teneo, inquit, finem illi videri nihil dolere
+    Si id dicis, vicimus.
     <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens
+    Inde sermone vario sex illa a Dipylo stadia confecimus.
     <BLANKLINE>
-    Si id dicis, vicimus
+    Sin aliud quid voles, postea.
     <BLANKLINE>
-    Inde sermone vario sex illa a Dipylo stadia confecimus
-    <BLANKLINE>
-    Sin aliud quid voles, postea
-    <BLANKLINE>
-    Quae animi affectio suum cuique tribuens atque hanc, quam dico
+    Quae animi affectio suum cuique tribuens atque hanc, quam dico.
     <BLANKLINE>
     Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
+    
     >>> text_indentation("")
-    <BLANKLINE>
+
     >>> text_indentation(None)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
+    
     >>> text_indentation()
     Traceback (most recent call last):
     ...
     TypeError: text_indentation() missing 1 required positional argument: 'text'
     >>> text_indentation("hello world")
     hello world
+    
     >>> text_indentation(1)
     Traceback (most recent call last):
     ...
     TypeError: text must be a string
+
+    >>> text_indentation("Holberton School")
+    Holberton School
+
+    >>> text_indentation("Holberton.School")
+    Holberton.
+    <BLANKLINE>
+    School
