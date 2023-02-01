@@ -16,18 +16,14 @@ def text_indentation(text):
     """Print the indentation of the given text indented after . ? and : ."""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    matches = [".", "?", "."]
+    matches = [".", "?", ":"]
     index = 0
     while index < len(text):
         if text[index] in matches:
             print(f"{text[index]}\n\n", end="")
-            try:
-                if text[index + 1] == " ":
-                    index += 2
-                else:
-                    index += 1
-            except IndexError:
-                pass
+            index += 1
+            while text[index] == " ":
+                index += 1
         else:
             print(text[index], end="")
             index += 1
