@@ -36,13 +36,14 @@ class Rectangle:
         self.__height = height
         self.__width = width
         Rectangle.number_of_instances += 1
+        #self.print_symbol = Rectangle.print_symbol
+
 
     def __str__(self):
         """Return a string representation of the Square."""
         if self.__width == 0 or self.__height == 0:
             return ""
         out_format = ""
-        self.print_symbol = Rectangle.print_symbol
 
         for i in range(self.__height):
             for j in range(self.__width):
