@@ -46,6 +46,9 @@ Now use it:
     TypeError: x must be an integer
 
     >>> bg.integer_validator("x", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: x must be an integer
 
     >>> bg.integer_validator("x", {1, 4})
     Traceback (most recent call last):
