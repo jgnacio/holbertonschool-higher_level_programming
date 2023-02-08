@@ -34,3 +34,20 @@ Now use it:
     Traceback (most recent call last):
     ...
     ValueError: x must be greater than 0
+
+    >>> bg.integer_validator("x", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: x must be an integer
+
+    >>> bg.integer_validator("x", [4])
+    Traceback (most recent call last):
+    ...
+    TypeError: x must be an integer
+
+    >>> bg.integer_validator("x", True)
+
+    >>> bg.integer_validator("x", {1, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: x must be an integer
