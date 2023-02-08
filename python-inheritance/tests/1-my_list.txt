@@ -19,6 +19,3 @@ Now use it:
     >>> my_list.append(5)
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
-    >>> new_list = MyList()
-    >>> new_list.append("xd")
-    
