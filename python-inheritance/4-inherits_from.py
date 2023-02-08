@@ -11,4 +11,4 @@ Created on Wen Feb 8 12:13:00 2023.
 
 def inherits_from(obj, a_class):
     """Function that verify that a class inherits from a given class."""
-    return issubclass(a_class, type(obj))
+    return not issubclass(a_class, type(obj))
