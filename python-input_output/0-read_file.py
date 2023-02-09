@@ -12,4 +12,4 @@ Created on Wen Feb 8 15:18:00 2023.
 def read_file(filename=""):
     """Read a file."""
     with open(filename, "r", encoding="UTF-8") as file:
-        print(file.read())
+        print(file.read(), end="")
