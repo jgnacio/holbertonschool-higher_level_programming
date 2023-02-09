@@ -1,3 +1,4 @@
 __pycache__/
 main.py
 .vscode/
+my_file_*.txt
