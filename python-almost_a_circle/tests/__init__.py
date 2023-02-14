@@ -2,4 +2,4 @@
 # -*- coding: utf-8 -*-
 """Initialize the application."""
 
-from .base import *
+from ..models import *
