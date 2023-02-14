@@ -9,8 +9,7 @@ Created on Tue Feb 14 15:24:00 2023.
 """
 
 
-from .base import Base
-
+from models.base import Base
 
 class Rectangle(Base):
     """Representation of a rectangle."""
