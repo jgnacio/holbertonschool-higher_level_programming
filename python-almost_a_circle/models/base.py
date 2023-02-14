@@ -11,9 +11,11 @@ Created on Mon Jan 30 11:46:00 2023.
 
 class Base:
     """Represents a base class object."""
+
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize the object."""
         if id is not None:
             self.id = id
         else:
