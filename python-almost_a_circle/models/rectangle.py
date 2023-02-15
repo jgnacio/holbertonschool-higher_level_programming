@@ -104,11 +104,20 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """Update arguments of the rectangle."""
-        attrNames = ('id', 'width', 'height', 'x', 'y')
+        attr_names = ('id', 'width', 'height', 'x', 'y')
 
         if args:
-            for key, value in zip(attrNames, args):
+            for key, value in zip(attr_names, args):
                 setattr(self, key, value)
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of the rectangle."""
+        attr_names = ("x", "y", "id", "height", "width")
+        my_dic = dict()
+        for key in attr_names:
+            my_dic[key] = getattr(self, key)
+
+        return my_dic
