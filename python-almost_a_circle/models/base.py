@@ -8,6 +8,8 @@ Created on Mon Jan 30 11:46:00 2023.
 
 """
 
+import json
+
 
 class Base:
     """Represents a base class object."""
@@ -21,3 +23,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """Convert a list of dictionaries to a json string."""
+        return json.dumps(list_dictionaries)
