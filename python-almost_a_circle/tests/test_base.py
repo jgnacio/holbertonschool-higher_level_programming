@@ -2,6 +2,7 @@ import unittest
 
 from models import Base
 
+
 class Tests(unittest.TestCase):
 
     def test_base(self):
@@ -14,6 +15,7 @@ class Tests(unittest.TestCase):
         self.assertEqual(test.id, 2)
         test = Base(44)
         self.assertEqual(test.id, 44)
+
 
 if __name__ == '__main__':
     unittest.main()
