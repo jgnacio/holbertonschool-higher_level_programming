@@ -25,6 +25,14 @@ class TestsRectangleClass(unittest.TestCase):
         self.assertEqual(test.x, 0)
         self.assertEqual(test.y, 0)
 
+    def text_area(self):
+        test = Rectangle(1, 1)
+        self.assertEqual(test.area(), 1)
+        test = Rectangle(1, 24)
+        self.assertEqual(test.area(), 24)
+        test = Rectangle(2, 8)
+        self.assertEqual(test.area(), 16)
+
 
 if __name__ == '__main__':
     unittest.main()
