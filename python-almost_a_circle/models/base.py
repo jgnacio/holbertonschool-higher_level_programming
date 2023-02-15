@@ -41,3 +41,12 @@ class Base:
                 new_list.append(obj.to_dictionary())
         with open(file_name, "w", encoding="UTF-8") as file:
             file.write(Base.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Load a list of objects from a json string."""
+        if json_string is None:
+            return []
+
+        load = json.loads(json_string)
+        return load
