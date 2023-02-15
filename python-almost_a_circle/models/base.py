@@ -31,6 +31,15 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """Load a list of objects from a json string."""
+        if json_string is None:
+            return []
+
+        load = json.loads(json_string)
+        return load
+
     @classmethod
     def save_to_file(cls, list_objs):
         """Save a list of objects to a file."""
@@ -42,11 +51,12 @@ class Base:
         with open(file_name, "w", encoding="UTF-8") as file:
             file.write(Base.to_json_string(new_list))
 
-    @staticmethod
-    def from_json_string(json_string):
-        """Load a list of objects from a json string."""
-        if json_string is None:
-            return []
-
-        load = json.loads(json_string)
-        return load
+    @classmethod
+    def create(cls, **dictionary):
+        """Return instance with given attributes from dictionary."""
+        if cls.__name__ == 'Rectangle':
+            dummy = cls(1, 1)
+        elif cls.__name__ == 'Square':
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
