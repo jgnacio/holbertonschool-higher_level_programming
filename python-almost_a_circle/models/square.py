@@ -40,10 +40,10 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Update arguments of the rectangle."""
-        attrNames = ('id', 'size', 'x', 'y')
+        attr_names = ('id', 'size', 'x', 'y')
 
         if args:
-            for key, value in zip(attrNames, args):
+            for key, value in zip(attr_names, args):
                 setattr(self, key, value)
         else:
             for key, value in kwargs.items():
