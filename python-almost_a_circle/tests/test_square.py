@@ -9,6 +9,7 @@ Created on Wed Feb 15 9:14:00 2023.
 """
 
 import unittest
+import os
 from models import Base, Rectangle, square
 
 
@@ -95,10 +96,13 @@ class TestSquareClass(unittest.TestCase):
         """test save_to_file."""
         r1 = square.Square.save_to_file(None)
         self.assertEqual(square.Square.load_from_file(), [])
+        os.remove("./Square.json")
         r1 = square.Square.save_to_file([])
         self.assertEqual(square.Square.load_from_file(), [])
+        os.remove("./Square.json")
         r1 = square.Square.save_to_file([square.Square(1)])
         self.assertIsInstance(square.Square.load_from_file()[0], square.Square)
+        os.remove("./Square.json")
         r1 = square.Square.load_from_file()
         self.assertEqual(Base.save_to_file(r1), None)
 

@@ -10,6 +10,7 @@ Created on Wed Feb 15 9:14:00 2023.
 
 import unittest
 import sys
+import os
 import io
 from models import Rectangle, Base
 
@@ -153,10 +154,11 @@ class TestsRectangleClass(unittest.TestCase):
         """test save_to_file."""
         r1 = Rectangle.save_to_file(None)
         self.assertEqual(Rectangle.load_from_file(), [])
+        os.remove("./Rectangle.json")
         r1 = Rectangle.save_to_file([])
         self.assertEqual(Rectangle.load_from_file(), [])
+        os.remove("./Rectangle.json")
         r1 = Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 20)])
-        Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 20)])
         self.assertIsInstance(Rectangle.load_from_file()[0], Rectangle)
         r1 = Rectangle.load_from_file()
         self.assertEqual(Base.save_to_file(r1), None)
