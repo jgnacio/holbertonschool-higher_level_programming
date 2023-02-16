@@ -22,13 +22,19 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(square.Square(1, 2, 3, -2).id, -2)
         with self.assertRaises(TypeError):
             square.Square("1")
+        with self.assertRaises(TypeError):
             square.Square("1", 1)
+        with self.assertRaises(TypeError):
             square.Square(1, "1")
+        with self.assertRaises(TypeError):
             square.Square(1, 2, "3")
         with self.assertRaises(ValueError):
             square.Square(-1)
+        with self.assertRaises(ValueError):
             square.Square(1, -2)
+        with self.assertRaises(ValueError):
             square.Square(1, 2, -3)
+        with self.assertRaises(ValueError):
             square.Square(0)
 
     def test_string(self):
@@ -62,39 +68,37 @@ class TestSquareClass(unittest.TestCase):
 
     def test_create(self):
         """Test for creating a square."""
-        r1 = square.Square.create(**{'id': 62})
-        self.assertEqual(r1.to_dictionary(), {
+        sqr1 = square.Square.create(**{'id': 62})
+        self.assertEqual(sqr1.to_dictionary(), {
             'id': 62, 'x': 0, 'size': 1,  'y': 0
         })
-        r1 = square.Square.create(**{'id': 62, 'x': 2})
-        self.assertEqual(r1.to_dictionary(), {
+        sqr1 = square.Square.create(**{'id': 62, 'x': 2})
+        self.assertEqual(sqr1.to_dictionary(), {
             'id': 62, 'x': 2, 'size': 1,  'y': 0
         })
-        r1 = square.Square.create(**{'id': 62, 'x': 2, 'size': 2})
-        self.assertEqual(r1.to_dictionary(), {
+        sqr1 = square.Square.create(**{'id': 62, 'x': 2, 'size': 2})
+        self.assertEqual(sqr1.to_dictionary(), {
             'id': 62, 'x': 2, 'size': 2,  'y': 0
         })
-        r1 = square.Square.create(**{'id': 62, 'x': 2, 'size': 2,  'y': 24})
-        self.assertEqual(r1.to_dictionary(), {
+        sqr1 = square.Square.create(**{'id': 62, 'x': 2, 'size': 2,  'y': 24})
+        self.assertEqual(sqr1.to_dictionary(), {
             'id': 62, 'x': 2, 'size': 2,  'y': 24
         })
-        r1 = Rectangle.create(**{
+        sqr1 = square.Square.create(**{
             'id': 62, 'x': 2, 'size': 2,  'y': 24
         })
-        self.assertEqual(r1.to_dictionary(), {
-            'id': 62, 'width': 1, 'height': 1, 'x': 2, 'y': 24
+        self.assertEqual(sqr1.to_dictionary(), {
+            'id': 62, 'x': 2, 'size': 2,  'y': 24
         })
 
     def test_save_to_file(self):
         """test save_to_file."""
-        self.assertEqual(square.Square.save_to_file(None), None)
-        self.assertEqual(square.Square.save_to_file([]), None)
-        self.assertEqual(square.Square.save_to_file(
-            [square.Square(1, 2, 1, 1)]
-        ), None)
-        self.assertEqual(square.Square.save_to_file(
-            [square.Square(1, 2, 1, 1)]
-        ), None)
+        r1 = square.Square.save_to_file(None)
+        self.assertEqual(square.Square.load_from_file(), [])
+        r1 = square.Square.save_to_file([])
+        self.assertEqual(square.Square.load_from_file(), [])
+        r1 = square.Square.save_to_file([square.Square(1)])
+        self.assertIsInstance(square.Square.load_from_file()[0], square.Square)
         r1 = square.Square.load_from_file()
         self.assertEqual(Base.save_to_file(r1), None)
 

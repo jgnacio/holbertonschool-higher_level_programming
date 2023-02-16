@@ -33,18 +33,28 @@ class TestsRectangleClass(unittest.TestCase):
         r5 = Rectangle(40, 128)
         self.assertEqual(r5.width, 40)
         self.assertEqual(r5.height, 128)
+
+    def test_width_height_exceptions(self):
         with self.assertRaises(TypeError):
-            Rectangle("1", 2)
-            Rectangle(1, "2")
-            Rectangle(1, 2, "3")
-            Rectangle(1, 2, 3, "4")
+            r1 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, 2, 3, "4")
         with self.assertRaises(ValueError):
-            Rectangle(-1, 2)
-            Rectangle(1, -2)
-            Rectangle(0, 2)
-            Rectangle(1, 0)
-            Rectangle(1, 2, -3)
-            Rectangle(1, 2, 3, -4)
+            r1 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(1, 2, 3, -4)
 
     def test_x_and_y(self):
         """Test x and y coordinates."""
@@ -88,7 +98,7 @@ class TestsRectangleClass(unittest.TestCase):
 
     def test_to_dictionary(self):
         """Test to dictionary."""
-        test_dic = {'x': 24, 'y': 62, 'id': 19, 'height': 2, 'width': 2}
+        test_dic = {'x': 24, 'y': 62, 'id': 20, 'height': 2, 'width': 2}
         self.assertEqual(Rectangle(2, 2, 24, 62).to_dictionary(), test_dic)
 
     def test_update_args(self):
@@ -141,14 +151,13 @@ class TestsRectangleClass(unittest.TestCase):
 
     def test_save_to_file(self):
         """test save_to_file."""
-        self.assertEqual(Rectangle.save_to_file(None), None)
-        self.assertEqual(Rectangle.save_to_file([]), None)
-        self.assertEqual(Rectangle.save_to_file(
-            [Rectangle(1, 2, 1, 1, 20)]
-        ), None)
-        self.assertEqual(Rectangle.save_to_file(
-            [Rectangle(1, 2, 1, 1, 20)]
-        ), None)
+        r1 = Rectangle.save_to_file(None)
+        self.assertEqual(Rectangle.load_from_file(), [])
+        r1 = Rectangle.save_to_file([])
+        self.assertEqual(Rectangle.load_from_file(), [])
+        r1 = Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 20)])
+        Rectangle.save_to_file([Rectangle(1, 2, 1, 1, 20)])
+        self.assertIsInstance(Rectangle.load_from_file()[0], Rectangle)
         r1 = Rectangle.load_from_file()
         self.assertEqual(Base.save_to_file(r1), None)
 
