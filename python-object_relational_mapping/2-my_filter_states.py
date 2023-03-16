@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     # Executing Query
     cursor.execute(
-        "SELECT * FROM states where name = \"{}\" ORDER BY id".format(
+        "SELECT * FROM states where name LIKE BINARY \"{}\" ORDER BY id".format(
             sys.argv[4]
         )
     )
