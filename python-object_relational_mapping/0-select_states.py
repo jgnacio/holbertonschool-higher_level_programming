@@ -8,6 +8,7 @@ Created on Thur March 16 02:37:00 2023.
 
 """
 
+import sys
 import MySQLdb
 
 
@@ -17,9 +18,9 @@ def conect_to_db():
     try:
         db_connection = MySQLdb.connect(
             "localhost",
-            "root",
-            "",
-            "hbtn_0e_0_usa")
+            sys.argv[1],
+            sys.argv[2],
+            sys.argv[3])
     # If connection is not successful
     except MySQLdb.OperationalError:
         print("Can't connect to database")
