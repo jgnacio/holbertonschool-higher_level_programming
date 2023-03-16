@@ -4,3 +4,4 @@ main.py
 my_file_*.txt
 *.json
 *-my_class.py
+test.sql
