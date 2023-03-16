@@ -10,11 +10,16 @@ Created on Thur March 16 02:37:00 2023.
 
 import MySQLdb
 
+
 def conect_to_db():
-    """Function for connecting to MySQL database."""
+    """Make Connection to MySQL database, and list their sontent."""
     # Trying to connect
     try:
-        db_connection = MySQLdb.connect("localhost","root","","hbtn_0e_0_usa")
+        db_connection = MySQLdb.connect(
+            "localhost",
+            "root",
+            "",
+            "hbtn_0e_0_usa")
     # If connection is not successful
     except MySQLdb.OperationalError:
         print("Can't connect to database")
