@@ -33,9 +33,9 @@ if __name__ == '__main__':
 
     # Executing Query
     cursor.execute(
-        "SELECT * FROM states where name LIKE BINARY \"{}\" ORDER BY id".format(
-            sys.argv[4]
-        )
+        "SELECT * FROM states " +
+        "where name LIKE BINARY " +
+        "\"{}\" ORDER BY id".format(sys.argv[4])
     )
 
     # Above Query Gives Us The Current Date
