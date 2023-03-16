@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
+
+import sys
+import MySQLdb
+
 """
 Created on Thur March 16 02:37:00 2023.
 
 @author: jgnacio
 @description:
-
+    This module provides a simple connection to
+    a Mysql database with MySQLdb module, using
+    the comand line arguments.
 """
-
-import sys
-import MySQLdb
 
 
 # Trying to connect
@@ -19,7 +22,7 @@ try:
         sys.argv[1],
         sys.argv[2],
         sys.argv[3])
-# If connection is not successful
+    # If connection is not successful
 except MySQLdb.OperationalError:
     print("Can't connect to database")
 
