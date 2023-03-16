@@ -32,7 +32,9 @@ if __name__ == '__main__':
     cursor = db_connection.cursor()
 
     # Executing Query
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id")
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
+    )
 
     # Above Query Gives Us The Current Date
     # Fetching all Data
