@@ -33,7 +33,9 @@ if __name__ == '__main__':
 
     # Executing Query
     cursor.execute(
-        f"SELECT * FROM states where name = \"{sys.argv[4]}\" ORDER BY id"
+        "SELECT * FROM states where name = \"{}\" ORDER BY id".format(
+            sys.argv[4]
+        )
     )
 
     # Above Query Gives Us The Current Date
