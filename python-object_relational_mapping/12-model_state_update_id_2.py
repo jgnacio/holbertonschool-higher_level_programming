@@ -34,7 +34,7 @@ if __name__ == "__main__":
     update_state = session.query(State).filter_by(id=2).first()
 
     # Changue the name record like an argument object
-    update_state.name = "Mexico"
+    update_state.name = "New Mexico"
 
     # Set all changues
     session.commit()
