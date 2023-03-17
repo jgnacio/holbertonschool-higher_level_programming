@@ -36,7 +36,7 @@ if __name__ == "__main__":
     cities = session.query(
         City.name,
         State.name,
-        City.state_id
+        City.id
     ).select_from(join_id_states).all()
     for city in cities:
         print(f"{city[1]}: ({city[2]}) {city[0]}")
