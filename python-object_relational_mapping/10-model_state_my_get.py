@@ -35,10 +35,10 @@ if __name__ == "__main__":
     safe_argument = (sys.argv[4],)
 
     # Print out only the states that have an a in the name record
-    states = session.query(State).filter(State.name.like(safe_argument))
+    states = session.query(State).filter(State.name.like(safe_argument)).all()
 
-    for state in states:
-        if state:
-            print(f"{state.id}: {state.name}")
-        else:
-            print("Nothing")
+    if states:
+        for state in states:
+                print(f"{state.id}")
+    else:
+        print("Not found")
