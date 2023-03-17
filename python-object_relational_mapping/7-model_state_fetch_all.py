@@ -10,24 +10,30 @@ Created on Fri March 17 12:22:00 2023.
     objects from the database given.
 """
 
-import sys
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
 
-engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
-    sys.argv[1],
-    sys.argv[2],
-    sys.argv[3]),
-    pool_pre_ping=True
-)
+if __name__ == "__main__":
+    import sys
+    from sqlalchemy import (create_engine)
+    from sqlalchemy.orm import sessionmaker
+    from model_state import Base, State
 
-Base.metadata.create_all(engine)
+    # Make a engine to connect to mysql database
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}".format(
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3]),
+        pool_pre_ping=True
+    )
 
-Session = sessionmaker(engine)
+    # Create the engine with the given connection
+    Base.metadata.create_all(engine)
 
-session = Session()
+    # Create new session class and session instance for
+    # manage the database.
+    Session = sessionmaker(engine)
+    session = Session()
 
-states = session.query(State)
-for state in states:
-    print(f"{state.id}: {state.name}")
+    # Print out all the records on state column
+    states = session.query(State)
+    for state in states:
+        print(f"{state.id}: {state.name}")
