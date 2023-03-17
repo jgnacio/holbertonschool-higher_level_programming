@@ -30,9 +30,11 @@ if __name__ == "__main__":
     Session = sessionmaker(engine)
     session = Session()
 
-    # Get only the row with the id equal to 2
+    # Get only the rows that contains an "a" in name column
     delete_states = session.query(State).filter(State.name.like("%a%"))
 
     # Delete all record fetched
-    delete_states.delete()
+    for state in delete_states:
+        session.delete(state)
+
     session.commit()
