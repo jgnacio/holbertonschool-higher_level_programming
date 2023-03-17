@@ -39,6 +39,6 @@ if __name__ == "__main__":
 
     if states:
         for state in states:
-                print(f"{state.id}")
+            print(f"{state.id}")
     else:
         print("Not found")
