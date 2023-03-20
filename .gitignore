@@ -1,7 +1,7 @@
 __pycache__/
 main.py
-.vscode/
 my_file_*.txt
-*.json
+Base.json
+Rectangle.json
 *-my_class.py
 test.sql
