@@ -7,7 +7,6 @@ args.forEach(element => {
       bigest[1] = bigest[0];
     }
     bigest[0] = +element;
-    console.log(bigest);
   }
 });
 console.log(bigest[1]);
