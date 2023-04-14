@@ -1,13 +1,13 @@
 #!/usr/bin/node
-const Rectangle = require("./5-square");
+const Rectangle = require('./5-square');
 
 module.exports = class Square extends Rectangle {
-  constructor(size) {
+  constructor (size) {
     super(size);
   }
 
-  charPrint(c) {
-    if (c === undefined) c = "X";
+  charPrint (c) {
+    if (c === undefined) c = 'X';
     for (let i = 0; i < this.width; i++) {
       for (let j = 0; j < this.height; j++) {
         process.stdout.write(c);
