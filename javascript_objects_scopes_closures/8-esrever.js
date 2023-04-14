@@ -7,5 +7,5 @@ exports.esrever = function (list) {
       (list[list.length - (i + 1)] = list[i])
     ][0];
   }
-  console.log(list);
+  return list;
 };
